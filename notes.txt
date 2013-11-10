@@ -49,3 +49,21 @@
 
 > nrow(subset(d, (latitude < 38 & longitude < -120)))
 
+
+> d[d$latitude < 38 & d$longitude < -120,]$city <- 'sw'
+> nrow(d[d$city == 'sw'])
+> nrow(d[d$city == 'sw',])
+[1] 19106
+> d[d$latitude < 38 & d$longitude > -120,]$city <- 'se'
+> table(d$city)
+
+  none     se     sw 
+164642  39381  19106 
+> plot(d$latitude~d$longitude)
+> d[d$longitude > -90 & d$longitude < -80,]$city <- 'n'
+> d[d$latitude > 41 & d$longitude > -80,]$city <- 'ne'
+> table(d$city)
+
+     n     ne     se     sw 
+154341  10301  39381  19106 
+

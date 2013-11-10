@@ -1,0 +1,51 @@
+> tapply(d$num_views, d$tag_type, mean)
+ abandoned_vehicle abandoned_vehicles     animal_problem        bad_driving 
+         18.555556          39.111111          66.722222         102.954545 
+             bench       bike_concern  blighted_property             bridge 
+         79.203704         137.254777          34.115234          62.443787 
+         crosswalk      drain_problem       drug_dealing              flood 
+         59.618182          47.793893          92.018868          34.850746 
+          graffiti               heat           homeless            hydrant 
+         30.581161          42.000000          47.640288           5.517429 
+    illegal_idling     lost_and_found    noise_complaint               odor 
+         42.852941         470.000000          78.630435          58.489362 
+             other         overgrowth      parking_meter   pedestrian_light 
+        102.000000          22.742785          84.948276          17.200000 
+           pothole       prostitution         public_art     public_concern 
+         32.486812          48.923077         289.000000         237.000000 
+       road_safety           roadkill            robbery            rodents 
+         70.880435          32.782609          79.375000          30.900000 
+          sidewalk              signs               snow       street_light 
+         42.738170          60.962866          40.488166          22.518577 
+     street_signal               test            traffic              trash 
+         32.656250          47.975610          70.493617          21.402759 
+              tree             zoning 
+         22.839111         101.700000 
+
+> table(d$tag_type)
+
+ abandoned_vehicle abandoned_vehicles     animal_problem        bad_driving 
+               126                117                 54                 22 
+             bench       bike_concern  blighted_property             bridge 
+                54                157               1024                169 
+         crosswalk      drain_problem       drug_dealing              flood 
+               110                393                106                134 
+          graffiti               heat           homeless            hydrant 
+              4066                 26                139               2209 
+    illegal_idling     lost_and_found    noise_complaint               odor 
+                34                  3                 46                 47 
+             other         overgrowth      parking_meter   pedestrian_light 
+                 1               1594                 58                 15 
+           pothole       prostitution         public_art     public_concern 
+              6066                 26                  1                  1 
+       road_safety           roadkill            robbery            rodents 
+               184                 23                 72                 30 
+          sidewalk              signs               snow       street_light 
+              1585               1912                676               3768 
+     street_signal               test            traffic              trash 
+                32                 41                705              19791 
+              tree             zoning 
+              7788                 10 
+
+> nrow(subset(d, (latitude < 38 & longitude < -120)))
+

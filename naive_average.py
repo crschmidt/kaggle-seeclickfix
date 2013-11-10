@@ -20,7 +20,7 @@ outf.write("id,num_views,num_votes,num_comments\n")
 avg_views_ipart = int(avg_views)
 avg_comments_ipart = int(avg_comments)
 avg_votes_ipart = int(avg_votes)
-r = csv.reader(open("test.csv"))
+r = csv.reader(open("train.csv"))
 r.next()
 for row in r:
     id = row[0]

@@ -67,3 +67,30 @@
      n     ne     se     sw 
 154341  10301  39381  19106 
 
+There are NAs in the tag_type column.
+Also, even issues with votes can have no views (!?)
+
+> predict(glm(num_views ~ tag_type, data=train_data), train_data)
+
+selecting training vs. test:
+
+ tf <- rbinom(223129, 1, .5)
+ train_data <- d[tf==1&!is.na(d$tag_type),]
+ test_data <- d[tf==1,]
+
+Crap:
+
+> table(d[is.na(d$source),]$city)
+
+    n    ne    se    sw 
+  206  2746 23042  2857 
+> table(d[is.na(d$tag_type),]$city)
+
+     n     ne     se     sw 
+152107   3369   9048   5190 
+
+tag type is *never* set for chicago;
+sometimes unset for other cities.
+
+source is sometimes not set; most often
+in Richmond.
